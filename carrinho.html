@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Carrinho | Maison Belle</title>
+
+    <link rel="stylesheet" href="css/carrinho.css">
+
+</head>
+
+<body onload="carregarCarrinho()">
+
+<header>
+
+    <h1>🛒 Meu Carrinho</h1>
+
+    <a href="index.html" class="voltar">
+        ← Continuar Comprando
+    </a>
+
+</header>
+
+<main>
+
+    <div id="listaCarrinho">
+
+    </div>
+
+    <div class="resumo">
+
+        <h2>Total</h2>
+
+        <h3 id="valorTotal">
+
+            R$ 0,00
+
+        </h3>
+
+<button class="comprar" onclick="window.location.href='checkout.html'">
+
+Finalizar Compra
+
+</button>
+    </div>
+
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

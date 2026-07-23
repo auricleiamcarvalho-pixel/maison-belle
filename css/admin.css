@@ -1,0 +1,491 @@
+/* ==========================================
+            MAISON BELLE
+        PAINEL ADMINISTRATIVO
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:linear-gradient(
+        180deg,
+        #f8fbff,
+        #edf4ff
+    );
+
+    min-height:100vh;
+
+}
+
+
+/* ==========================================
+                HEADER
+========================================== */
+
+header{
+
+    background:linear-gradient(
+        135deg,
+        #123D84,
+        #1D5FD1
+    );
+
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+}
+
+nav{
+
+    width:92%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 0;
+
+}
+
+/* LOGO */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid white;
+
+}
+
+.logo h1{
+
+    color:white;
+
+    font-size:30px;
+
+    letter-spacing:2px;
+
+    margin-bottom:4px;
+
+}
+
+.logo p{
+
+    color:#d9e7ff;
+
+    font-size:14px;
+
+}
+
+
+/* MENU */
+
+.icones{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.icones a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 18px;
+
+    border-radius:30px;
+
+    transition:.3s;
+
+    font-weight:bold;
+
+}
+
+.icones a:hover{
+
+    background:white;
+
+    color:#123D84;
+
+}
+
+
+/* ==========================================
+              TÍTULO
+========================================== */
+
+.titulo-admin{
+
+    text-align:center;
+
+    padding:70px 20px 45px;
+
+}
+
+.titulo-admin h2{
+
+    color:#123D84;
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+    font-family:Georgia, serif;
+
+}
+
+.titulo-admin p{
+
+    color:#5d6b84;
+
+    font-size:18px;
+
+}
+
+
+/* ==========================================
+          ÁREA DO PAINEL
+========================================== */
+
+.painel{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:0 auto 80px;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:
+
+    0 15px 45px rgba(18,61,132,.12);
+
+}
+
+
+/* ==========================================
+        RESPONSIVO
+========================================== */
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.icones{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.logo{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.logo h1{
+
+font-size:24px;
+
+}
+
+.titulo-admin h2{
+
+font-size:32px;
+
+}
+
+.painel{
+
+padding:25px;
+
+}
+
+}
+/* FORMULÁRIO */
+
+.painel h3{
+
+    color:#123D84;
+
+    font-size:28px;
+
+    margin-bottom:35px;
+
+    text-align:center;
+
+}
+
+.grupo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:22px;
+
+}
+
+.grupo label{
+
+    margin-bottom:8px;
+
+    color:#123D84;
+
+    font-weight:bold;
+
+}
+
+.grupo input,
+.grupo select,
+.grupo textarea{
+
+    padding:16px;
+
+    border:2px solid #dbe8ff;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    outline:none;
+
+}
+
+.grupo input:focus,
+.grupo select:focus,
+.grupo textarea:focus{
+
+    border-color:#123D84;
+
+    box-shadow:0 0 10px rgba(18,61,132,.15);
+
+}
+
+.linha{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.btn-salvar{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    135deg,
+    #123D84,
+    #2C6BE0);
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-salvar:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 10px 25px rgba(18,61,132,.30);
+
+}
+/* ==========================================
+        LISTA DE PRODUTOS ADMIN
+========================================== */
+
+
+#produtos-admin{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-top:30px;
+
+}
+
+
+
+.produto-admin{
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(18,61,132,.12);
+
+    transition:.3s;
+
+}
+
+
+
+.produto-admin:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+.produto-admin img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+}
+
+
+
+.produto-admin div{
+
+    padding:20px;
+
+}
+
+
+
+.produto-admin h4{
+
+    color:#123D84;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.produto-admin p{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#333;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.produto-admin button{
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    margin-right:8px;
+
+    transition:.3s;
+
+}
+
+
+
+.produto-admin button:first-of-type{
+
+    background:#123D84;
+
+    color:white;
+
+}
+
+
+
+.produto-admin button:last-of-type{
+
+    background:#eee;
+
+    color:#123D84;
+
+}
+
+
+
+.produto-admin button:hover{
+
+    transform:translateY(-2px);
+
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel Administrativo | Maison Belle</title>
+
+    <link rel="stylesheet" href="CSS/estilo.css">
+    <link rel="stylesheet" href="CSS/admin.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav>
+
+        <div class="logo">
+
+            <img src="imagens/logo.png.png" alt="Maison Belle">
+
+            <div>
+
+                <h1>MAISON BELLE</h1>
+
+                <p>Painel Administrativo</p>
+
+            </div>
+
+        </div>
+
+        <div class="icones">
+
+            <a href="index.html">🏠 Loja</a>
+
+            <a href="favoritos.html">💙 Favoritos</a>
+
+            <a href="carrinho.html">🛒 Carrinho</a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<section class="titulo-admin">
+
+    <h2>Painel Administrativo</h2>
+
+    <p>Cadastre novos produtos na Maison Belle.</p>
+
+</section>
+
+    <section class="painel">
+
+<h3>Cadastrar Novo Produto</h3>
+
+<form id="formProduto">
+
+<div class="grupo">
+
+<label>Nome do Produto</label>
+
+<input
+type="text"
+id="nome"
+placeholder="Ex.: Vestido Serenity"
+required>
+
+</div>
+
+<div class="linha">
+
+<div class="grupo">
+
+<label>Preço (R$)</label>
+
+<input
+type="number"
+id="preco"
+step="0.01"
+placeholder="199.90"
+required>
+
+</div>
+
+<div class="grupo">
+
+<label>Categoria</label>
+
+<select id="categoria">
+
+<option value="vestidos">Vestidos</option>
+
+<option value="conjuntos">Conjuntos</option>
+
+<option value="blusas">Blusas</option>
+
+<option value="calcas">Calças</option>
+
+<option value="shorts">Shorts</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="grupo">
+<label>Imagem do Produto</label>
+
+<input
+type="file"
+id="imagemArquivo"
+accept="image/*">
+</div>
+
+<div class="grupo">
+
+<label>Descrição Curta</label>
+
+<textarea
+id="descricao"
+rows="3"></textarea>
+
+</div>
+
+<div class="grupo">
+
+<label>Descrição Completa</label>
+
+<textarea
+id="descricaoCompleta"
+rows="5"></textarea>
+
+</div>
+
+<div class="linha">
+
+<div class="grupo">
+
+<label>Nota</label>
+
+<input
+type="number"
+id="avaliacao"
+step="0.1"
+min="0"
+max="5"
+placeholder="4.9">
+
+</div>
+
+<div class="grupo">
+
+<label>Quantidade em Estoque</label>
+
+<input
+type="number"
+id="estoque"
+placeholder="25">
+
+</div>
+
+</div>
+<button
+type="submit"
+class="btn-salvar"
+id="botaoSalvar">
+
+💙 Salvar Produto
+
+</button>
+
+
+<button
+type="button"
+class="btn-cancelar"
+id="botaoCancelar"
+style="display:none;">
+
+Cancelar Edição
+
+</button>
+
+</form>
+<section class="painel lista-admin">
+
+    <h3>
+        Produtos Cadastrados
+    </h3>
+
+<input 
+type="text"
+id="pesquisaProduto"
+placeholder="🔎 Pesquisar produto..."
+>
+<select id="filtroCategoria">
+
+<option value="todos">
+Todos os produtos
+</option>
+
+<option value="vestidos">
+Vestidos
+</option>
+
+<option value="conjuntos">
+Conjuntos
+</option>
+
+<option value="blusas">
+Blusas
+</option>
+
+<option value="calcas">
+Calças
+</option>
+
+<option value="shorts">
+Shorts
+</option>
+
+</select>
+    <div id="produtos-admin">
+
+    </div>
+
+
+</section>
+
+<script src="js/produtos.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

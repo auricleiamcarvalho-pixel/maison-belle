@@ -1,0 +1,818 @@
+/* ==================================
+   MAISON BELLE
+   FAVORITOS.CSS
+   DESIGN PREMIUM
+================================== */
+
+
+/* FUNDO */
+
+body{
+
+    background:#ffffff;
+
+}
+
+
+/* ==================================
+   TÍTULO DA PÁGINA
+================================== */
+
+
+.titulo-favoritos{
+
+    text-align:center;
+
+    padding:70px 20px 40px;
+
+}
+
+
+.titulo-favoritos h2{
+
+    color:#123D84;
+
+    font-family:Georgia, serif;
+
+    font-size:42px;
+
+    font-weight:normal;
+
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.titulo-favoritos p{
+
+    color:#6b7280;
+
+    font-size:17px;
+
+}
+
+
+
+
+/* ==================================
+   ÁREA DOS CARDS
+================================== */
+
+
+#lista-favoritos{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:30px auto 80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+}
+
+
+
+
+
+/* ==================================
+   CARD FAVORITO
+================================== */
+
+
+#lista-favoritos .produto{
+
+    background:white;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+    0 10px 30px rgba(18,61,132,0.12);
+
+    transition:.4s;
+
+    text-align:center;
+
+    padding-bottom:25px;
+
+}
+
+
+
+#lista-favoritos .produto:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+
+    0 18px 40px rgba(18,61,132,0.22);
+
+}
+
+
+
+
+
+/* ==================================
+   IMAGEM DO PRODUTO
+================================== */
+
+
+#lista-favoritos .produto img{
+
+    width:100%;
+
+    height:430px;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* ==================================
+   NOME
+================================== */
+
+
+#lista-favoritos h3{
+
+    color:#123D84;
+
+    font-family:Georgia,serif;
+
+    font-size:23px;
+
+    margin:25px 15px 10px;
+
+}
+
+
+
+
+
+/* ==================================
+   PREÇO
+================================== */
+
+
+#lista-favoritos .preco{
+
+    color:#2456A6;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+
+/* ==================================
+   BOTÕES DOS FAVORITOS
+   ESTILO PREMIUM
+================================== */
+
+
+#lista-favoritos button{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    font-weight:bold;
+
+    letter-spacing:.5px;
+
+    transition:.35s ease;
+
+}
+
+
+
+
+
+/* ============================
+BOTÃO ADICIONAR CARRINHO
+============================ */
+
+
+#lista-favoritos .carrinho{
+
+    width:85%;
+
+    padding:16px;
+
+    margin:12px auto;
+
+    display:block;
+
+
+    background:linear-gradient(
+        135deg,
+        #123D84,
+        #2C6BE0
+    );
+
+
+    color:white;
+
+    border:none;
+
+    border-radius:35px;
+
+
+    font-size:16px;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+
+    0 8px 20px rgba(18,61,132,.25);
+
+
+}
+
+
+
+#lista-favoritos .carrinho:hover{
+
+
+    transform:translateY(-4px);
+
+
+    box-shadow:
+
+    0 12px 30px rgba(18,61,132,.40);
+
+
+    background:linear-gradient(
+        135deg,
+        #2C6BE0,
+        #123D84
+    );
+
+}
+
+
+
+
+
+/* ============================
+BOTÃO REMOVER FAVORITO
+============================ */
+
+
+#lista-favoritos .comprar{
+
+
+    width:85%;
+
+
+    padding:16px;
+
+
+    margin:12px auto;
+
+
+    display:block;
+
+
+
+    background:white;
+
+
+    color:#123D84;
+
+
+
+    border:2px solid #123D84;
+
+
+    border-radius:35px;
+
+
+
+    font-size:16px;
+
+
+    cursor:pointer;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+#lista-favoritos .comprar:hover{
+
+
+    background:#123D84;
+
+
+    color:white;
+
+
+    transform:translateY(-4px);
+
+
+    box-shadow:
+
+    0 10px 25px rgba(18,61,132,.25);
+
+
+}
+
+
+
+
+
+/* ============================
+EFEITO AO CLICAR
+============================ */
+
+
+#lista-favoritos button:active{
+
+
+    transform:scale(.96);
+
+
+}
+/* ==================================
+   FAVORITOS VAZIO
+================================== */
+
+
+.favoritos-vazio{
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+
+
+.favoritos-vazio h3{
+
+    color:#123D84;
+
+    font-size:30px;
+
+}
+
+
+
+.favoritos-vazio p{
+
+    color:#666;
+
+    margin-top:15px;
+
+}
+
+
+
+
+/* ==================================
+   RESPONSIVO
+================================== */
+
+
+@media(max-width:1100px){
+
+#lista-favoritos{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+}
+
+
+
+@media(max-width:800px){
+
+#lista-favoritos{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+
+@media(max-width:500px){
+
+#lista-favoritos{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* =========================================
+   ACABAMENTO PREMIUM - PÁGINA FAVORITOS
+========================================= */
+
+
+/* FUNDO GERAL */
+
+body{
+
+    background:
+    linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f4f8ff 100%
+    );
+
+}
+
+
+
+/* =========================================
+   ÁREA DO TÍTULO
+========================================= */
+
+
+.titulo-favoritos{
+
+    position:relative;
+
+    padding:90px 20px 60px;
+
+    text-align:center;
+
+}
+
+
+/* linha decorativa */
+
+.titulo-favoritos::after{
+
+    content:"";
+
+    display:block;
+
+    width:80px;
+
+    height:3px;
+
+    background:#123D84;
+
+    margin:25px auto 0;
+
+    border-radius:10px;
+
+}
+
+
+
+.titulo-favoritos h2{
+
+    font-family:Georgia, serif;
+
+    color:#123D84;
+
+    font-size:46px;
+
+    font-weight:normal;
+
+    letter-spacing:3px;
+
+    text-transform:none;
+
+}
+
+
+
+.titulo-favoritos p{
+
+    margin-top:18px;
+
+    color:#64748b;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+/* =========================================
+   CABEÇALHO DOS FAVORITOS
+========================================= */
+
+
+/* cria sensação de página de coleção */
+
+
+#lista-favoritos{
+
+    position:relative;
+
+}
+
+
+
+#lista-favoritos::before{
+
+    content:"SUAS PEÇAS ESCOLHIDAS";
+
+    position:absolute;
+
+    top:-45px;
+
+    left:0;
+
+
+    color:#123D84;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    letter-spacing:3px;
+
+}
+
+
+
+
+
+/* =========================================
+   MELHOR ESPAÇAMENTO DA VITRINE
+========================================= */
+
+
+#lista-favoritos{
+
+    padding-top:20px;
+
+    padding-bottom:80px;
+
+}
+
+
+
+
+/* =========================================
+   EFEITO ELEGANTE NOS CARDS
+   (sem mudar o formato)
+========================================= */
+
+
+#lista-favoritos .produto{
+
+    border:1px solid rgba(18,61,132,.08);
+
+}
+
+
+
+#lista-favoritos .produto::after{
+
+    content:"♥";
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+
+    width:40px;
+
+    height:40px;
+
+
+    background:white;
+
+
+    border-radius:50%;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    color:#123D84;
+
+
+    box-shadow:
+
+    0 5px 15px rgba(0,0,0,.12);
+
+
+}
+/* =========================================
+   HEADER MAISON BELLE - ELEGANTE
+========================================= */
+
+
+body header{
+
+    background:#123D84;
+
+    padding:12px 7%;
+
+    box-shadow:
+    0 4px 18px rgba(0,0,0,0.15);
+
+}
+
+
+
+/* ORGANIZAÇÃO */
+
+body header nav{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+
+/* LOGO */
+
+body header .logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+
+/* IMAGEM */
+
+body header .logo img{
+
+    width:55px !important;
+
+    height:55px !important;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:2px solid rgba(255,255,255,.8);
+
+}
+
+
+
+/* NOME */
+
+body header .logo h1{
+
+    color:white !important;
+
+    font-family:Georgia,serif;
+
+    font-size:26px !important;
+
+    letter-spacing:3px;
+
+    line-height:1;
+
+    margin:0;
+
+}
+
+
+
+/* FRASE */
+
+body header .logo p{
+
+    color:#D6E6FF !important;
+
+    font-size:11px;
+
+    letter-spacing:1.5px;
+
+    margin-top:6px;
+
+}
+
+
+
+/* ÍCONES */
+
+body header .icones{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+body header .icones a{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    
+
+    background:rgba(255,255,255,.12);
+
+    
+
+    border-radius:50%;
+
+    
+
+    color:white !important;
+
+    
+
+    font-size:21px;
+
+    
+
+    transition:.3s;
+
+}
+
+
+
+body header .icones a:hover{
+
+    background:white;
+
+    color:#123D84 !important;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* CONTADORES */
+
+body header #contador,
+body header #contador-favoritos{
+
+
+    position:absolute;
+
+
+    width:18px;
+
+    height:18px;
+
+
+    background:white;
+
+
+    color:#123D84;
+
+
+    font-size:10px;
+
+
+}

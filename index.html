@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Maison Belle | Moda Feminina</title>
+
+<link rel="stylesheet" href="css/estilo.css">
+
+
+</head>
+
+
+<body>
+ <header>
+
+
+<nav>
+
+    <div class="logo">
+
+        <img src="imagens/logo.png.png">
+
+        <div>
+
+            <h1>MAISON BELLE</h1>
+
+            <p>Elegância em cada detalhe</p>
+
+        </div>
+
+    </div>
+
+    <div class="pesquisa">
+
+        <input
+        type="text"
+        placeholder="🔍 Pesquise vestidos, conjuntos, blusas..."
+        id="pesquisa">
+
+    </div>
+
+    <div class="icones">
+
+        <a href="#">👤</a>
+
+        <a href="favoritos.html" class="icone-favoritos">
+        
+            💙 Favoritos
+        
+             <span id="contador-favoritos">0</span>
+         </a>
+
+        <a href="carrinho.html">
+
+            🛒
+
+            <span id="contador">0</span>
+
+        </a>
+
+    </div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+    <div class="hero-texto">
+
+        <span class="novidade">
+            ✨ NOVA COLEÇÃO 2026
+        </span>
+
+        <h2>
+            Vista sua melhor versão.
+        </h2>
+
+        <p>
+
+            Descubra roupas que unem elegância,
+            conforto e autenticidade para todos os momentos.
+
+            A Maison Belle traz tendências inspiradas
+            nas maiores marcas da moda.
+
+        </p>
+
+        <div class="hero-botoes">
+
+            <a href="#produtos" class="btn-principal">
+
+                Comprar Agora
+
+            </a>
+
+            <a href="#produtos" class="btn-secundario">
+
+                Ver Coleção
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-imagem">
+
+        <img src="imagens/banner-modelo.png.jpeg"
+        alt="Modelo Maison Belle">
+
+    </div>
+
+</section>
+<!-- =======================
+     CATEGORIAS
+======================== -->
+
+<section class="categorias">
+
+    <button class="ativo" onclick="filtrarProdutos('todos')">
+        Todos
+    </button>
+
+    <button onclick="filtrarProdutos('vestidos')">
+        Vestidos
+    </button>
+
+    <button onclick="filtrarProdutos('blusas')">
+        Blusas
+    </button>
+
+    <button onclick="filtrarProdutos('conjuntos')">
+        Conjuntos
+    </button>
+
+    <button onclick="filtrarProdutos('saias')">
+        Saias
+    </button>
+
+    <button onclick="filtrarProdutos('promocoes')">
+        Promoções
+    </button>
+
+</section>
+  <br>
+  <hr>
+    <section
+class="produtos"
+id="lista-produtos">
+    </section>
+<script src="js/produtos.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
