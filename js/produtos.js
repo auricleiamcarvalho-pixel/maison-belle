@@ -148,7 +148,7 @@ const produtos = [
     {
         nome: "Conjunto Jeans Grafite",
         categoria: "conjuntos",
-        imagem: "imagens/Conjunto Jeans Grafite.png",
+        imagem: "imagens/conjunto jeans grafite.png",
         preco: 259.90,
 
         avaliacao: "4.9 (127)",
@@ -233,7 +233,7 @@ const produtos = [
 {
     nome: "Conjunto Elegance",
     categoria: "conjuntos",
-    imagem: "imagens/Conjunto Elegance.png",
+    imagem: "imagens/conjunto elegance.png",
     preco: 259.90,
 
     avaliacao: "4.9 (164)",
@@ -262,7 +262,7 @@ const produtos = [
 {
     nome: "Shorts Saia Jeans",
     categoria: "saias",
-    imagem: "imagens/Shorts Saia Jeans.png",
+    imagem: "imagens/shorts saia jeans.png",
     preco: 129.90,
 
     avaliacao: "4.9 (138)",
@@ -289,7 +289,7 @@ const produtos = [
 {
     nome: "Shorts Saia Aurora",
     categoria: "saias",
-    imagem: "imagens/Shorts Saia Aurora.png",
+    imagem: "imagens/shorts saia aurora.png",
     preco: 119.90,
 
     avaliacao: "4.9 (121)",
@@ -318,7 +318,7 @@ const produtos = [
 {
     nome: "Short Alfaiataria Belle",
     categoria: "saias",
-    imagem: "imagens/Short Alfaiataria Belle.png",
+    imagem: "imagens/Short alfaiataria Belle.png",
     preco: 109.90,
 
     avaliacao: "5.0 (96)",
