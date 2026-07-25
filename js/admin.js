@@ -335,19 +335,56 @@ filtroCategoria.addEventListener(
 "change",
 filtrarProdutos
 );
-function lerImagem(arquivo){
+ function lerImagem(arquivo){
 
     return new Promise((resolve)=>{
 
-
         const leitor = new FileReader();
 
+        leitor.onload = function(e){
 
-        leitor.onload = function(){
+            const img = new Image();
 
-            resolve(leitor.result);
+            img.onload = function(){
+
+                const canvas = document.createElement("canvas");
+
+                const larguraMaxima = 700;
+
+                const escala = larguraMaxima / img.width;
+
+                canvas.width = larguraMaxima;
+                canvas.height = img.height * escala;
+
+                const ctx = canvas.getContext("2d");
+
+                ctx.drawImage(
+                    img,
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height
+                );
+
+                const imagemComprimida =
+                canvas.toDataURL(
+                    "image/jpeg",
+                    0.7
+                );
+
+                resolve(imagemComprimida);
+
+            };
+
+            img.src = e.target.result;
 
         };
+
+        leitor.readAsDataURL(arquivo);
+
+    });
+
+}
 
 
         leitor.readAsDataURL(arquivo);
