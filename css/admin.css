@@ -489,3 +489,353 @@ padding:25px;
     transform:translateY(-2px);
 
 }
+/* ==========================================
+        ADMIN MOBILE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+
+
+    nav{
+
+        width:100%;
+
+        padding:15px;
+
+    }
+
+
+
+    .logo img{
+
+        width:70px;
+
+        height:70px;
+
+    }
+
+
+
+    .logo h1{
+
+        font-size:22px;
+
+    }
+
+
+
+    .logo p{
+
+        font-size:12px;
+
+    }
+
+
+
+    .icones{
+
+        width:100%;
+
+        justify-content:center;
+
+        gap:8px;
+
+    }
+
+
+
+    .icones a{
+
+        font-size:13px;
+
+        padding:10px;
+
+    }
+
+
+
+    .titulo-admin{
+
+        padding:40px 15px 25px;
+
+    }
+
+
+
+    .titulo-admin h2{
+
+        font-size:28px;
+
+    }
+
+
+
+    .titulo-admin p{
+
+        font-size:15px;
+
+    }
+
+
+
+    .painel{
+
+        width:94%;
+
+        padding:20px;
+
+        margin-bottom:40px;
+
+        border-radius:18px;
+
+    }
+
+
+
+    .painel h3{
+
+        font-size:22px;
+
+        margin-bottom:25px;
+
+    }
+
+
+
+    .linha{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:0;
+
+    }
+
+
+
+    .grupo input,
+    .grupo select,
+    .grupo textarea{
+
+        width:100%;
+
+        font-size:16px;
+
+    }
+
+
+
+    .btn-salvar,
+    .btn-cancelar{
+
+        font-size:16px;
+
+        padding:16px;
+
+    }
+
+
+
+    #produtos-admin{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+
+
+    .produto-admin img{
+
+        height:250px;
+
+    }
+
+
+
+    .produto-admin div{
+
+        padding:15px;
+
+    }
+
+
+
+    .produto-admin button{
+
+        width:100%;
+
+        margin-bottom:10px;
+
+        padding:14px;
+
+    }
+
+
+}
+
+
+/* ==========================================
+      AJUSTES CELULAR ADMIN
+========================================== */
+
+
+@media(max-width:768px){
+
+
+    .painel{
+
+        width:95%;
+
+        padding:20px;
+
+        border-radius:18px;
+
+    }
+
+
+
+    .linha{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:0;
+
+    }
+
+
+
+    .grupo input,
+    .grupo select,
+    .grupo textarea{
+
+        width:100%;
+
+        font-size:16px;
+
+    }
+
+
+
+    .btn-salvar,
+    .btn-cancelar{
+
+        font-size:16px;
+
+        padding:16px;
+
+    }
+
+
+
+    #produtos-admin{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .produto-admin img{
+
+        height:260px;
+
+    }
+
+
+
+}
+/* ==========================================
+        HEADER MOBILE ADMIN
+========================================== */
+
+
+@media(max-width:500px){
+
+
+    header{
+
+        position:relative;
+
+    }
+
+
+    nav{
+
+        gap:15px;
+
+    }
+
+
+    .logo{
+
+        gap:10px;
+
+    }
+
+
+    .logo img{
+
+        width:55px;
+
+        height:55px;
+
+    }
+
+
+    .logo h1{
+
+        font-size:20px;
+
+        letter-spacing:1px;
+
+    }
+
+
+    .logo p{
+
+        font-size:11px;
+
+    }
+
+
+    .icones{
+
+        display:grid;
+
+        grid-template-columns:repeat(3,1fr);
+
+        width:100%;
+
+    }
+
+
+    .icones a{
+
+        text-align:center;
+
+        background:rgba(255,255,255,.12);
+
+        border-radius:12px;
+
+        font-size:12px;
+
+        padding:10px 5px;
+
+    }
+
+
+}

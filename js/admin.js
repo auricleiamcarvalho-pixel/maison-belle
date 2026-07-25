@@ -1,40 +1,67 @@
+import { auth, db } from "./firebase.js";
+import{
+    onAuthStateChanged,
+    signOut
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+import {
+    collection,
+    addDoc,
+    getDocs,
+    deleteDoc,
+    doc,
+    updateDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+onAuthStateChanged(auth, (usuario) => {
+
+    if (!usuario) {
+
+        window.location.href = "login.html";
+
+    }
+
+});
 const formulario = document.getElementById("formProduto");
 
 
 // pega produtos salvos ou cria uma lista vazia
-let produtosAdmin = JSON.parse(localStorage.getItem("produtos")) || [];
-produtosAdmin = produtosAdmin.map(produto => {
+let produtosAdmin = [];
+async function carregarProdutosFirebase(){
+
+    const produtosBanco = [];
+
+    const consulta = await getDocs(
+        collection(db,"produtos")
+    );
 
 
-    return {
+    consulta.forEach((documento)=>{
 
-        ...produto,
+        produtosBanco.push({
 
-        avaliacao: produto.avaliacao || "5.0",
+            id: documento.id,
 
-        estoque: produto.estoque || "0",
+            ...documento.data()
 
-        categoria: produto.categoria || "vestidos",
+        });
 
-        tamanhos: produto.tamanhos || [
-            "P",
-            "M",
-            "G",
-            "GG"
-        ]
-
-    };
+    });
 
 
-});
+    produtosAdmin = produtosBanco;
+
+    produtosMostrar = produtosAdmin;
 
 
-localStorage.setItem(
-    "produtos",
-    JSON.stringify(produtosAdmin)
-);
+    mostrarProdutosAdmin();
+
+}
+
+
 let produtoEditando = null;
+
 let produtosMostrar = produtosAdmin;
+
+carregarProdutosFirebase();
 const botaoSalvar = document.getElementById("botaoSalvar");
 const botaoCancelar = document.getElementById("botaoCancelar");
 const imagemArquivo = document.getElementById("imagemArquivo");
@@ -83,20 +110,22 @@ descricao: document.getElementById("descricao").value,
         ]
 
     };
-
 if(produtoEditando === null){
 
+   await addDoc(
+    collection(db, "produtos"),
+    novoProduto
+);
 
-    produtosAdmin.push(novoProduto);
+await carregarProdutosFirebase();
 
-
-    alert("Produto cadastrado com sucesso! 💙");
-
-
+alert("Produto cadastrado com sucesso! 💙");
 }else{
 
-
-    produtosAdmin[produtoEditando] = novoProduto;
+    await updateDoc(
+        doc(db, "produtos", produtoEditando),
+        novoProduto
+    );
 
 
     alert("Produto atualizado com sucesso! 💙");
@@ -105,13 +134,9 @@ if(produtoEditando === null){
     produtoEditando = null;
 
 
+    await carregarProdutosFirebase();
+
 }
-
-localStorage.setItem(
-    "produtos",
-    JSON.stringify(produtosAdmin)
-);
-
 
 formulario.reset();
 
@@ -157,13 +182,11 @@ function mostrarProdutosAdmin(){
     ⭐ Avaliação: ${produto.avaliacao}
 </p>
 
-
-<button onclick="editarProduto(${index})">
+<button onclick="editarProduto('${produto.id}')">
     Editar
 </button>
 
-
-<button onclick="excluirProduto(${index})">
+<button onclick="excluirProduto('${produto.id}')">
     Excluir
 </button>
 
@@ -182,8 +205,7 @@ function mostrarProdutosAdmin(){
 
 
 mostrarProdutosAdmin();
-function excluirProduto(index){
-
+async function excluirProduto(id){
 
     const confirmar = confirm(
         "Deseja realmente excluir este produto?"
@@ -192,27 +214,19 @@ function excluirProduto(index){
 
     if(confirmar){
 
-
-        produtosAdmin.splice(index,1);
-
-
-        localStorage.setItem(
-            "produtos",
-            JSON.stringify(produtosAdmin)
+        await deleteDoc(
+            doc(db, "produtos", id)
         );
-
-
-        mostrarProdutosAdmin();
 
 
         alert("Produto excluído com sucesso! 💙");
 
+
+        carregarProdutosFirebase();
+
     }
 
 }
-
-
-
 function editarProduto(index){
 
     produtoEditando = index;
@@ -342,3 +356,19 @@ function lerImagem(arquivo){
     });
 
 }
+const botaoSair = document.getElementById("sair");
+
+
+if(botaoSair){
+
+    botaoSair.addEventListener("click", async ()=>{
+
+        await signOut(auth);
+
+        window.location.href = "login.html";
+
+    });
+
+}
+window.excluirProduto = excluirProduto;
+window.editarProduto = editarProduto;

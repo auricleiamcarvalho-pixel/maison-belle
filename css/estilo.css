@@ -1781,15 +1781,375 @@ margin:auto;
 }
 
 }
-/* TESTE GRID */
+/* ==========================
+HEADER MOBILE
+========================== */
 
-.produtos{
-    display:grid !important;
-    grid-template-columns:repeat(4, 1fr) !important;
-    gap:25px !important;
+@media(max-width:500px){
+
+
+header{
+
+    padding:15px 5%;
+
 }
 
 
+
+nav{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+/* LOGO */
+
+.logo{
+
+    flex-direction:column;
+
+    gap:8px;
+
+    text-align:center;
+
+}
+
+
+
+.logo img{
+
+    width:65px;
+
+    height:65px;
+
+}
+
+
+
+.logo h1{
+
+    font-size:24px;
+
+    letter-spacing:3px;
+
+}
+
+
+
+.logo p{
+
+    font-size:11px;
+
+}
+
+
+
+/* PESQUISA */
+
+.pesquisa{
+
+    width:100%;
+
+}
+
+
+
+.pesquisa input{
+
+    max-width:100%;
+
+    padding:12px 15px;
+
+}
+
+
+
+/* ICONES */
+
+.icones{
+
+    width:100%;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+
+
+.icones a{
+
+    font-size:22px;
+
+}
+
+
+}
+/* ==========================
+HERO MOBILE
+========================== */
+
+@media(max-width:500px){
+
+
+.hero{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:50px 5%;
+
+    min-height:auto;
+
+}
+
+
+
+.hero-texto{
+
+    max-width:100%;
+
+}
+
+
+
+.novidade{
+
+    font-size:13px;
+
+    padding:7px 15px;
+
+}
+
+
+
+.hero h2{
+
+    font-size:34px;
+
+    line-height:1.2;
+
+}
+
+
+
+.hero p{
+
+    font-size:16px;
+
+    line-height:1.6;
+
+}
+
+
+
+.hero-botoes{
+
+    flex-direction:column;
+
+    width:100%;
+
+    gap:15px;
+
+}
+
+
+
+.btn-principal,
+.btn-secundario{
+
+    width:100%;
+
+    padding:15px;
+
+}
+
+
+
+.hero-imagem{
+
+    margin-top:35px;
+
+}
+
+
+
+.hero-imagem img{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+
+
+}
+/* ==========================
+CATEGORIAS MOBILE
+========================== */
+
+@media(max-width:500px){
+
+
+.categorias{
+
+    justify-content:flex-start;
+
+    flex-wrap:nowrap;
+
+    overflow-x:auto;
+
+    gap:12px;
+
+    padding:25px 5%;
+
+}
+
+
+
+.categorias::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+
+
+.categorias button{
+
+    flex-shrink:0;
+
+    padding:12px 20px;
+
+    font-size:14px;
+
+}
+
+
+}
+/* ==========================
+CARDS PRODUTOS MOBILE
+========================== */
+
+@media(max-width:500px){
+
+
+.produtos{
+
+    width:95%;
+
+    margin:25px auto;
+
+    gap:20px;
+
+}
+
+
+
 .produto{
-    width:100% !important;
+
+    width:100%;
+
+    border-radius:15px;
+
+}
+
+
+
+.produto img{
+
+    height:380px;
+
+}
+
+
+
+.produto h3{
+
+    font-size:20px;
+
+    margin:12px 8px;
+
+}
+
+
+
+.preco{
+
+    font-size:24px;
+
+}
+
+
+
+.parcelamento{
+
+    font-size:13px;
+
+}
+
+
+
+.descricao{
+
+    font-size:14px;
+
+}
+
+
+
+.avaliacao{
+
+    font-size:16px;
+
+}
+
+
+
+.acoes-produto{
+
+    padding:15px;
+
+}
+
+
+
+.tamanho{
+
+    width:100%;
+
+}
+
+
+
+.carrinho,
+.comprar{
+
+    width:100%;
+
+    font-size:15px;
+
+    padding:13px;
+
+}
+
+
+
+.favorito{
+
+    width:38px;
+
+    height:38px;
+
+    font-size:20px;
+
+}
+
+
 }

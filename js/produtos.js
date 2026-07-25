@@ -1,4 +1,4 @@
-const produtosSalvos = JSON.parse(localStorage.getItem("produtos")) || [];
+const produtosSalvos = [];
 const produtos = [
 
 {
@@ -430,6 +430,4 @@ const produtos = [
     ]
 }
 ];
-
-
-produtos.push(...produtosSalvos);
+export { produtos };

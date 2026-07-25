@@ -691,62 +691,18 @@ function removerFavorito(index){
 
 
 }
-function gerarProdutos(){
 
-    const lista = document.getElementById("lista-produtos");
-
-    if(!lista) return;
-
-    lista.innerHTML = "";
-
-    produtos.forEach(produto=>{
-
-        lista.innerHTML += `
-        
-<div class="produto ${produto.categoria}">
-
-<button
-class="favorito"
-data-nome="${produto.nome}"
-data-imagem="${produto.imagem}"
-data-preco="${produto.preco}">
-♡
-</button>
-
-<img src="${produto.imagem}">
-
-<h3>${produto.nome}</h3>
-
-<p class="preco">
-R$ ${produto.preco.toFixed(2)}
-</p>
-
-<button
-class="carrinho"
-onclick="adicionarCarrinho(
-'${produto.nome}',
-${produto.preco},
-'${produto.imagem}'
-)">
-🛒 Adicionar ao Carrinho
-</button>
-
-</div>
-
-`;
-
-    });
-
-}
 // INICIALIZAÇÃO
-document.addEventListener("DOMContentLoaded",function(){
-    
-gerarProdutos();
+document.addEventListener("DOMContentLoaded", function () {
 
-carregarFavoritos();
+    carregarFavoritos();
 
-atualizarCoracoes();
+    atualizarCoracoes();
 
-atualizarContadorFavoritos();
+    atualizarContadorFavoritos();
 
 });
+
+window.adicionarCarrinho = adicionarCarrinho;
+window.comprarAgora = comprarAgora;
+window.filtrarProdutos = filtrarProdutos;

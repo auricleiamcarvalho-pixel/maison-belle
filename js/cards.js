@@ -1,14 +1,55 @@
+import { produtos } from "./produtos.js";
+import { db } from "./firebase.js";
+
+import {
+    collection,
+    getDocs
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
 const listaProdutos = document.getElementById("lista-produtos");
 
 
-produtos.forEach((produto) => {
 
-    const card = document.createElement("div");
-
-    card.classList.add("produto", produto.categoria);
+async function carregarProdutos() {
 
 
-    card.innerHTML = `
+    const produtosFirebase = [];
+
+
+    const consulta = await getDocs(
+        collection(db, "produtos")
+    );
+
+
+    consulta.forEach((doc) => {
+
+        produtosFirebase.push({
+            id: doc.id,
+            ...doc.data()
+        });
+
+    });
+
+
+
+    const todosProdutos = [
+        ...produtos,
+        ...produtosFirebase
+    ];
+
+
+
+    todosProdutos.forEach((produto) => {
+
+
+        const card = document.createElement("div");
+
+        card.classList.add("produto", produto.categoria);
+
+
+
+        card.innerHTML = `
 
         <button 
         class="favorito"
@@ -47,6 +88,7 @@ produtos.forEach((produto) => {
         </p>
 
 
+
         <details class="mais-informacoes">
 
             <summary>
@@ -58,13 +100,14 @@ produtos.forEach((produto) => {
                 ${produto.descricaoCompleta}
             </p>
 
-<ul class="detalhes">
 
-${(produto.detalhes || []).map(item => `
-    <li>✓ ${item}</li>
-`).join("")}
+            <ul class="detalhes">
 
-</ul>
+            ${(produto.detalhes || []).map(item => `
+                <li>✓ ${item}</li>
+            `).join("")}
+
+            </ul>
 
         </details>
 
@@ -78,13 +121,15 @@ ${(produto.detalhes || []).map(item => `
             </label>
 
 
+
             <select class="tamanho">
 
-                ${produto.tamanhos.map(tamanho => `
+                ${(produto.tamanhos || []).map(tamanho => `
                     <option>${tamanho}</option>
                 `).join("")}
 
             </select>
+
 
 
 
@@ -99,6 +144,7 @@ ${(produto.detalhes || []).map(item => `
                 🛒 Adicionar ao Carrinho
 
             </button>
+
 
 
 
@@ -118,10 +164,19 @@ ${(produto.detalhes || []).map(item => `
         </div>
 
 
-    `;
+        `;
 
 
-    listaProdutos.appendChild(card);
+
+        listaProdutos.appendChild(card);
 
 
-});
+
+    });
+
+
+}
+
+
+
+carregarProdutos();
