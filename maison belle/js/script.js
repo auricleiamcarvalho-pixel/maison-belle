@@ -83,67 +83,44 @@ function atualizarContador(){
 // MOSTRAR CARRINHO
 // ============================
 
-function carregarCarrinho(){
-
+function carregarCarrinho() {
     const lista = document.getElementById("listaCarrinho");
-
     const total = document.getElementById("valorTotal");
 
-    if(!lista) return;
+    if (!lista) return;
 
-    lista.innerHTML="";
+    lista.innerHTML = "";
+    let soma = 0;
 
-    let soma=0;
-
-    carrinho.forEach((produto,index)=>{
-
+    carrinho.forEach((produto, index) => {
         soma += produto.preco * produto.quantidade;
 
         lista.innerHTML += `
-
-        <div class="item">
-
-            <img src="${corrigirCaminhoImagem(produto.imagem)}" alt="${produto.nome}">
-
-            <div>
-
-                <h3>${produto.nome}</h3>
-
-                <p>R$ ${produto.preco.toFixed(2)}</p>
-
-                <div class="quantidade">
-
-                    <button onclick="diminuir(${index})">-</button>
-
-                    <span>${produto.quantidade}</span>
-
-                    <button onclick="aumentar(${index})">+</button>
-
+            <div class="item">
+                <img src="${corrigirCaminhoImagem(produto.imagem)}" alt="${produto.nome}">
+                <div>
+                    <h3>${produto.nome}</h3>
+                    <p>R$ ${produto.preco.toFixed(2).replace(".", ",")}</p>
+                    <div class="quantidade">
+                        <button onclick="diminuir(${index})">-</button>
+                        <span>${produto.quantidade}</span>
+                        <button onclick="aumentar(${index})">+</button>
+                    </div>
+                    <button onclick="remover(${index})">Remover</button>
                 </div>
-
-                <button onclick="remover(${index})">
-
-                    Remover
-
-                </button>
-
             </div>
-
-        </div>
-
         `;
-
     });
 
-    if(total){
-
-        total.innerHTML =
-
-        "R$ "+soma.toFixed(2);
-
+    if (total) {
+        total.textContent = "R$ " + soma.toFixed(2).replace(".", ",");
     }
 
+    if (typeof aplicarRecompensa === "function") {
+        aplicarRecompensa();
+    }
 }
+
 
 // ============================
 // AUMENTAR
@@ -714,3 +691,57 @@ document.addEventListener("DOMContentLoaded", function () {
 window.adicionarCarrinho = adicionarCarrinho;
 window.comprarAgora = comprarAgora;
 window.filtrarProdutos = filtrarProdutos;
+
+
+function aplicarRecompensa() {
+    const saldo = Number(localStorage.getItem("maisonBelleMoedas")) || 0;
+    const seletor = document.getElementById("recompensa");
+    const mensagem = document.getElementById("mensagem-recompensa");
+    const saldoTexto = document.getElementById("saldo-recompensas");
+    const descontoTexto = document.getElementById("valorDesconto");
+    const totalTexto = document.getElementById("valorTotal");
+
+    if (!seletor || !mensagem || !saldoTexto || !descontoTexto || !totalTexto) {
+        return;
+    }
+
+    const recompensas = {
+        0: 0,
+        10: 100,
+        15: 200,
+        20: 300,
+        25: 400,
+        30: 500
+    };
+
+    const percentual = Number(seletor.value);
+    const custo = recompensas[percentual];
+
+    saldoTexto.textContent = "Você tem " + saldo + " moedas.";
+
+    let subtotal = carrinho.reduce(
+        (soma, produto) => soma + produto.preco * produto.quantidade,
+        0
+    );
+
+    if (custo === undefined || saldo < custo) {
+        seletor.value = "0";
+        mensagem.textContent = "Você não tem moedas suficientes para essa recompensa.";
+        descontoTexto.textContent = "R$ 0,00";
+        totalTexto.textContent = "R$ " + subtotal.toFixed(2).replace(".", ",");
+        return;
+    }
+
+    const desconto = subtotal * percentual / 100;
+    const totalComDesconto = subtotal - desconto;
+
+    descontoTexto.textContent = "R$ " + desconto.toFixed(2).replace(".", ",");
+    totalTexto.textContent = "R$ " + totalComDesconto.toFixed(2).replace(".", ",");
+
+    mensagem.textContent = percentual === 0
+        ? "Nenhum desconto selecionado."
+        : "Desconto fictício de " + percentual + "% aplicado!";
+}
+
+window.aplicarRecompensa = aplicarRecompensa;
+

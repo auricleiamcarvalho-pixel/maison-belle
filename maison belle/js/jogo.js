@@ -226,3 +226,22 @@ botaoProximo.addEventListener("click", proximaPergunta);
 botaoReiniciar.addEventListener("click", reiniciarJogo);
 
 atualizarMoedas();
+
+/* Atualiza o saldo de moedas no cabeçalho da Maison Belle */
+function atualizarContadorMoedas() {
+    const contadorMoedas = document.getElementById("contador-moedas");
+
+    if (!contadorMoedas) return;
+
+    const saldo = Number(localStorage.getItem("maisonBelleMoedas")) || 0;
+
+    contadorMoedas.textContent = saldo;
+}
+
+atualizarContadorMoedas();
+
+window.addEventListener("storage", (evento) => {
+    if (evento.key === "maisonBelleMoedas") {
+        atualizarContadorMoedas();
+    }
+});

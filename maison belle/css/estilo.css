@@ -2206,3 +2206,69 @@ CARDS PRODUTOS MOBILE
 
 
 }
+
+
+/* Botão de acesso ao jogo Maison Belle */
+.acesso-jogo {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+  padding: 0 16px;
+}
+
+.acesso-jogo a {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #123D84;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #123D84;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(18, 61, 132, 0.15);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.acesso-jogo a:hover {
+  background-color: #E8F0FF;
+  color: #123D84;
+  transform: translateY(-2px);
+}
+
+.acesso-jogo a:focus-visible {
+  outline: 3px solid #8FB5F5;
+  outline-offset: 4px;
+}
+
+/* Saldo de moedas no cabeçalho Maison Belle */
+.icone-moedas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+#contador-moedas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 6px;
+    border-radius: 50px;
+    background-color: #E8F0FF;
+    color: #123D84;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.icone-moedas:hover {
+    opacity: 0.85;
+}
