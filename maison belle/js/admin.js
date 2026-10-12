@@ -385,14 +385,7 @@ filtrarProdutos
     });
 
 }
-
-
-        leitor.readAsDataURL(arquivo);
-
-
-    });
-
-}
+    
 const botaoSair = document.getElementById("sair");
 
 
