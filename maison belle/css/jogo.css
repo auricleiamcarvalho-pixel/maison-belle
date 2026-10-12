@@ -1,0 +1,315 @@
+
+/* =====================================
+   MAISON BELLE — ESTILO DO JOGO
+   ===================================== */
+
+:root {
+    --azul-principal: #123D84;
+    --azul-claro: #E8F0FF;
+    --azul-suave: #D6E4FF;
+    --branco: #FFFFFF;
+    --texto: #27354B;
+    --texto-suave: #64748B;
+    --borda: #DCE6F5;
+    --verde-suave: #E6F7ED;
+    --verde: #237747;
+    --rosa-suave: #FFF0F4;
+    --sombra: 0 12px 35px rgba(18, 61, 132, 0.09);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: #F8FAFF;
+    line-height: 1.6;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 7%;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+    color: var(--azul-principal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.subtitulo {
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+
+.conteudo {
+    width: min(920px, 92%);
+    margin: 40px auto;
+}
+
+.cartao-jogo,
+.recompensas {
+    padding: 32px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 22px;
+    box-shadow: var(--sombra);
+}
+
+.cartao-jogo {
+    text-align: center;
+}
+
+.etiqueta {
+    margin: 0;
+    color: var(--azul-principal);
+    font-size: 0.76rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+h1,
+h2 {
+    color: var(--azul-principal);
+}
+
+h1 {
+    margin: 10px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+h2 {
+    line-height: 1.3;
+}
+
+.descricao {
+    max-width: 570px;
+    margin: 14px auto 24px;
+    color: var(--texto-suave);
+}
+
+.painel-moedas {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: fit-content;
+    margin: 0 auto 28px;
+    padding: 10px 22px;
+    background: var(--azul-claro);
+    border: 1px solid var(--azul-suave);
+    border-radius: 999px;
+}
+
+.painel-moedas span {
+    color: var(--azul-principal);
+    font-size: 0.9rem;
+}
+
+.painel-moedas strong {
+    color: var(--azul-principal);
+    font-size: 1.2rem;
+}
+
+.icone-jogo {
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    margin: 0 auto;
+    color: var(--azul-principal);
+    background: var(--azul-claro);
+    border-radius: 50%;
+    font-size: 2.5rem;
+}
+
+#inicio-jogo > p,
+#resultado > p {
+    max-width: 520px;
+    margin: 0 auto 22px;
+    color: var(--texto-suave);
+}
+
+#botao-comecar,
+#botao-proximo,
+#botao-reiniciar {
+    padding: 13px 26px;
+    color: var(--branco);
+    background: var(--azul-principal);
+    border: 0;
+    border-radius: 12px;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#botao-comecar:hover,
+#botao-proximo:hover,
+#botao-reiniciar:hover {
+    background: #0B2D65;
+    transform: translateY(-1px);
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #7CA8F5;
+    outline-offset: 4px;
+}
+
+#progresso {
+    color: var(--texto-suave);
+    font-weight: bold;
+}
+
+#pergunta {
+    margin: 18px 0 22px;
+    font-size: 1.35rem;
+}
+
+#alternativas {
+    display: grid;
+    gap: 12px;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.alternativa {
+    width: 100%;
+    padding: 13px 16px;
+    color: var(--texto);
+    text-align: left;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+}
+
+.alternativa:hover:not(:disabled) {
+    background: var(--azul-claro);
+    border-color: #8BAFEF;
+}
+
+.alternativa:disabled {
+    cursor: default;
+    opacity: 1;
+}
+
+.alternativa.correta {
+    color: var(--verde);
+    background: var(--verde-suave);
+    border-color: #A8DDBB;
+}
+
+.alternativa.errada {
+    background: var(--rosa-suave);
+    border-color: #F2C4D0;
+}
+
+#mensagem {
+    min-height: 28px;
+    font-weight: bold;
+}
+
+#mensagem.sucesso {
+    color: var(--verde);
+}
+
+#mensagem.erro {
+    color: #A33B54;
+}
+
+#botao-proximo {
+    margin-top: 8px;
+}
+
+.recompensas {
+    margin-top: 24px;
+}
+
+.recompensas h2 {
+    margin-top: 0;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.recompensas > p {
+    color: var(--texto-suave);
+}
+
+.recompensas ul {
+    display: grid;
+    gap: 10px;
+    padding-left: 22px;
+}
+
+.recompensas li::marker {
+    color: var(--azul-principal);
+}
+
+.aviso {
+    padding: 12px 14px;
+    background: var(--azul-claro);
+    border-radius: 10px;
+    font-size: 0.85rem;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.rodape {
+    padding: 24px;
+    text-align: center;
+}
+
+.rodape a {
+    color: var(--azul-principal);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.rodape a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 5%;
+    }
+
+    .conteudo {
+        margin: 24px auto;
+    }
+
+    .cartao-jogo,
+    .recompensas {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .painel-moedas {
+        gap: 8px;
+        padding: 9px 16px;
+    }
+}

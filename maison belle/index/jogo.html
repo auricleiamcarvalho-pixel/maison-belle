@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo Maison Belle</title>
+
+    <link rel="stylesheet" href="../css/jogo.css">
+    <script src="../js/jogo.js" defer></script>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a class="logo" href="index.html">Maison Belle</a>
+        <span class="subtitulo">Um mimo para você</span>
+    </header>
+
+    <main class="conteudo">
+        <section class="cartao-jogo">
+            <p class="etiqueta">DIVERSÃO E RECOMPENSAS</p>
+
+            <h1>Desafio Maison Belle</h1>
+
+            <p class="descricao">
+                Responda às perguntas, acumule moedas e descubra
+                as recompensas especiais da Maison Belle!
+            </p>
+
+            <div class="painel-moedas">
+                <span>Suas moedas</span>
+                <strong id="moedas">0</strong>
+            </div>
+
+            <div id="inicio-jogo">
+                <div class="icone-jogo" aria-hidden="true">✦</div>
+
+                <h2>Vamos começar?</h2>
+
+                <p>
+                    Prepare-se para responder a 10 perguntas
+                    e acumular moedas nesta aventura.
+                </p>
+
+                <button id="botao-comecar" type="button">
+                    Começar a jogar
+                </button>
+            </div>
+
+            <div id="area-pergunta" hidden>
+                <p id="progresso"></p>
+                <h2 id="pergunta"></h2>
+                <div id="alternativas"></div>
+                <p id="mensagem" aria-live="polite"></p>
+
+                <button id="botao-proximo" type="button" hidden>
+                    Próxima pergunta
+                </button>
+            </div>
+
+            <div id="resultado" hidden>
+                <h2>Parabéns por jogar!</h2>
+                <p id="resumo-final"></p>
+                <button id="botao-reiniciar" type="button">
+                    Jogar novamente
+                </button>
+            </div>
+        </section>
+
+        <section class="recompensas">
+            <h2>Suas recompensas</h2>
+            <p>Acumule moedas para desbloquear descontos simulados.</p>
+
+            <ul>
+                <li><strong>100 moedas</strong> — 10% de desconto</li>
+                <li><strong>200 moedas</strong> — 15% de desconto</li>
+                <li><strong>300 moedas</strong> — 20% de desconto</li>
+                <li><strong>400 moedas</strong> — 25% de desconto</li>
+                <li><strong>500 moedas</strong> — 30% de desconto</li>
+            </ul>
+
+            <p class="aviso">
+                Os descontos são demonstrativos e não alteram
+                automaticamente os preços ou pagamentos da loja.
+            </p>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <a href="index.html">Voltar para a Maison Belle</a>
+    </footer>
+</body>
+</html>
