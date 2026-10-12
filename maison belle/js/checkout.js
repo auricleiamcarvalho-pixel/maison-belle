@@ -4,7 +4,15 @@
 
 
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+function corrigirCaminhoImagem(imagem) {
+    if (!imagem) return "";
 
+    if (imagem.startsWith("/")) {
+        return imagem;
+    }
+
+    return "/" + imagem.replace(/^\.?\//, "");
+}
 
 
 function carregarResumo(){
@@ -56,7 +64,7 @@ function carregarResumo(){
         <div class="produto-checkout">
 
 
-            <img src="${produto.imagem}">
+            <img src="${corrigirCaminhoImagem(produto.imagem)}" alt="${produto.nome}">
 
 
             <div>

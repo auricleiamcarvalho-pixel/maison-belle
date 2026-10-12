@@ -8,7 +8,7 @@ const produtos = [
 
     preco:289.90,
 
-    imagem:"imagens/Vestido Élise.png",
+    imagem:"/imagens/Vestido Élise.png",
 
     avaliacao:"★★★★★",
 
@@ -33,7 +33,7 @@ const produtos = [
     {
         nome: "Vestido Serenity",
         categoria: "vestidos",
-        imagem: "imagens/Vestido Serenity.png",
+        imagem: "/imagens/Vestido Serenity.png",
         preco: 199.90,
 
         avaliacao: "4.9 (198)",
@@ -61,7 +61,7 @@ const produtos = [
     {
         nome: "Vestido Sophie",
         categoria: "vestidos",
-        imagem: "imagens/Vestido Sophie.png",
+        imagem: "/imagens/Vestido Sophie.png",
         preco: 249.90,
 
         avaliacao: "4.9 (176)",
@@ -90,7 +90,7 @@ const produtos = [
     {
         nome: "Vestido Celeste",
         categoria: "vestidos",
-        imagem: "imagens/Vestido Celeste.png",
+        imagem: "/imagens/Vestido Celeste.png",
         preco: 219.90,
 
         avaliacao: "4.9 (154)",
@@ -119,7 +119,7 @@ const produtos = [
     {
         nome: "Look Casual Denim",
         categoria: "conjuntos",
-        imagem: "imagens/Look Casual Denim.png",
+        imagem: "/imagens/Look Casual Denim.png",
         preco: 239.90,
 
         avaliacao: "5.0 (143)",
@@ -148,7 +148,7 @@ const produtos = [
     {
         nome: "Conjunto Jeans Grafite",
         categoria: "conjuntos",
-        imagem: "imagens/conjunto jeans grafite.png",
+        imagem: "/imagens/conjunto jeans grafite.png",
         preco: 259.90,
 
         avaliacao: "4.9 (127)",
@@ -175,7 +175,7 @@ const produtos = [
     {
     nome: "Body Halter Basic Preto",
     categoria: "blusas",
-    imagem: "imagens/Body Halter Basic Preto.png",
+    imagem: "/imagens/Body Halter Basic Preto.png",
     preco: 89.90,
 
     avaliacao: "4.9 (235)",
@@ -204,7 +204,7 @@ const produtos = [
 {
     nome: "Calça Cargo Urban",
     categoria: "conjuntos",
-    imagem: "imagens/Calça Cargo Urban.png",
+    imagem: "/imagens/Calça Cargo Urban.png",
     preco: 179.90,
 
     avaliacao: "5.0 (112)",
@@ -233,7 +233,7 @@ const produtos = [
 {
     nome: "Conjunto Elegance",
     categoria: "conjuntos",
-    imagem: "imagens/conjunto elegance.png",
+    imagem: "/imagens/conjunto elegance.png",
     preco: 259.90,
 
     avaliacao: "4.9 (164)",
@@ -262,7 +262,7 @@ const produtos = [
 {
     nome: "Shorts Saia Jeans",
     categoria: "saias",
-    imagem: "imagens/shorts saia jeans.png",
+    imagem: "/imagens/shorts saia jeans.png",
     preco: 129.90,
 
     avaliacao: "4.9 (138)",
@@ -289,7 +289,7 @@ const produtos = [
 {
     nome: "Shorts Saia Aurora",
     categoria: "saias",
-    imagem: "imagens/shorts saia aurora.png",
+    imagem: "/imagens/shorts saia aurora.png",
     preco: 119.90,
 
     avaliacao: "4.9 (121)",
@@ -318,7 +318,7 @@ const produtos = [
 {
     nome: "Short Alfaiataria Belle",
     categoria: "saias",
-    imagem: "imagens/Short alfaiataria Belle.png",
+    imagem: "/imagens/Short alfaiataria Belle.png",
     preco: 109.90,
 
     avaliacao: "5.0 (96)",
@@ -347,7 +347,7 @@ const produtos = [
 {
     nome: "Conjunto Aurora",
     categoria: "conjuntos",
-    imagem: "imagens/Conjunto Aurora.png",
+    imagem: "/imagens/Conjunto Aurora.png",
     preco: 219.90,
 
     avaliacao: "5.0 (142)",
@@ -376,7 +376,7 @@ const produtos = [
 {
     nome: "Conjunto Valentina",
     categoria: "conjuntos",
-    imagem: "imagens/Conjunto Valentina.png",
+    imagem: "/imagens/Conjunto Valentina.png",
     preco: 199.90,
 
     avaliacao: "4.9 (189)",
@@ -405,7 +405,7 @@ const produtos = [
 {
     nome: "Cropped Tricô Oceano",
     categoria: "blusas",
-    imagem: "imagens/Cropped Tricô Oceano.png",
+    imagem: "/imagens/Cropped Tricô Oceano.png",
     preco: 89.90,
 
     avaliacao: "5.0 (105)",

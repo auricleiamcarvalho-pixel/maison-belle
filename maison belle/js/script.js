@@ -3,7 +3,15 @@
 // ============================
 
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+function corrigirCaminhoImagem(imagem) {
+    if (!imagem) return "";
 
+    if (imagem.startsWith("/")) {
+        return imagem;
+    }
+
+    return "/" + imagem.replace(/^\.?\//, "");
+}
 atualizarContador();
 
 // ============================
@@ -95,7 +103,7 @@ function carregarCarrinho(){
 
         <div class="item">
 
-            <img src="${produto.imagem}">
+            <img src="${corrigirCaminhoImagem(produto.imagem)}" alt="${produto.nome}">
 
             <div>
 
@@ -608,7 +616,7 @@ function carregarFavoritos(){
         <div class="produto favorito-card">
 
 
-            <img src="${produto.imagem}">
+            <img src="${corrigirCaminhoImagem(produto.imagem)}" alt="${produto.nome}">
 
 
 
