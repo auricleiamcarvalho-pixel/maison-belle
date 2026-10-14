@@ -5,7 +5,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/index/index.html"
+      "destination": "/Maison%20Belle/%C3%8Dndice/index.html"
+    },
+    {
+      "source": "/jogo.html",
+      "destination": "/Maison%20Belle/%C3%8Dndice/jogo.html"
     }
   ]
 }
